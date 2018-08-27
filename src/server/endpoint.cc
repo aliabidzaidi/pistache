@@ -49,6 +49,7 @@ Endpoint::init(const Endpoint::Options& options) {
 void
 Endpoint::setHandler(const std::shared_ptr<Handler>& handler) {
     handler_ = handler;
+    listener.setHandler(handler);
 }
 
 void

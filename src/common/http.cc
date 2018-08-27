@@ -604,6 +604,13 @@ ResponseStream::ResponseStream(
     }
 }
 
+void ResponseStream::write(const char* buf, int size) {
+    std::ostream os(&buf_);
+    os << std::hex << size << crlf;
+    os.write(buf, size);
+    os << crlf;
+}
+
 void
 ResponseStream::flush() {
     timeout_.disarm();

@@ -18,6 +18,7 @@ public:
     struct Options {
         friend class Endpoint;
 
+        Options();
         Options& threads(int val);
         Options& flags(Flags<Tcp::Options> flags);
         Options& backlog(int val);
@@ -26,7 +27,6 @@ public:
         int threads_;
         Flags<Tcp::Options> flags_;
         int backlog_;
-        Options();
     };
     Endpoint();
     Endpoint(const Address& addr);
