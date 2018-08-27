@@ -316,6 +316,8 @@ public:
     friend
     ResponseStream& operator<<(ResponseStream& stream, const T& val);
 
+    void write(const char* buf, int size);
+
     const Header::Collection& headers() const {
         return headers_;
     }
