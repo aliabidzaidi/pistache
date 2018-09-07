@@ -36,6 +36,8 @@ struct LowercaseEqual {
 class Collection {
 public:
 
+    const std::unordered_map<std::string, Raw>& getRawHeaders() const { return rawHeaders; };
+
     template<typename H>
     typename std::enable_if<
                  IsHeader<H>::value, std::shared_ptr<const H>

@@ -75,6 +75,13 @@ namespace {
             OUT(os << crlf);
         }
 
+        auto& rawHeaders = headers.getRawHeaders();
+        for (const auto& rawHeader: rawHeaders) {
+            OUT(os << rawHeader.second.name() << ": ");
+            OUT(os << rawHeader.second.value());
+            OUT(os << crlf);
+        }
+
         return true;
 
         #undef OUT
